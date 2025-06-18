@@ -1,103 +1,202 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Junior Hosting</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlueCode Store</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background-color: #f2f2f2;
-      color: #333;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0e1621;
+      color: #e0f7ff;
     }
+
     header {
-      background-color: #222;
-      color: white;
-      padding: 1.5rem;
+      background: url('https://i.imgur.com/Ph4lIoR.png') center/cover no-repeat;
+      padding: 3rem 2rem 1rem;
       text-align: center;
     }
-    nav a {
-      color: #fff;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
+
+    header img.logo {
+      width: 100px;
+      animation: float 3s ease-in-out infinite;
     }
-    nav a:hover {
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      background: #1c2938;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav .links a {
+      color: #81d4fa;
+      text-decoration: none;
+      margin: 0 1rem;
+    }
+
+    nav .links a:hover {
       text-decoration: underline;
     }
-    .container {
-      max-width: 900px;
-      margin: auto;
+
+    .section {
       padding: 2rem;
+      background: #132330;
+      margin: 1rem;
+      border-radius: 10px;
     }
-    section {
-      margin-bottom: 3rem;
+
+    .section h2 {
+      color: #00bcd4;
     }
-    h2 {
-      color: #007acc;
-      margin-top: 0;
+
+    .products, .reviews, .customers {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
     }
+
+    .product, .review, .customer {
+      background: #1f3a56;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    .auth, .assistant, .discord {
+      margin-top: 2rem;
+    }
+
+    .discord a {
+      background: #7289da;
+      padding: 0.5rem 1rem;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .chat-toggle, .chat-box {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .chat-toggle {
+      background: #0288d1;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 2000;
+    }
+
+    .chat-box {
+      display: none;
+      background: #0d1c2b;
+      padding: 1rem;
+      border-radius: 10px;
+      width: 300px;
+      box-shadow: 0 0 10px #000;
+    }
+
     footer {
-      background-color: #eee;
       text-align: center;
       padding: 1rem;
-      font-size: 0.9rem;
-      color: #666;
-    }
-    @media (max-width: 600px) {
-      nav {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 1rem;
-      }
+      color: #81d4fa;
+      background: #0a111a;
+      margin-top: 2rem;
     }
   </style>
+  <script>
+    function toggleChat() {
+      const chat = document.getElementById('chatBox');
+      chat.style.display = chat.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
 </head>
 <body>
+  <header>
+    <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/external-cube-graphic-design-flatart-icons-outline-flatarticons.png" class="logo" alt="BlueCode Logo">
+    <h1 style="color: white;">BlueCode</h1>
+  </header>
 
-<header>
-  <h1>Bienvenido a Junior Hosting</h1>
   <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#sobre">Sobre mí</a>
-    <a href="#proyectos">Proyectos</a>
-    <a href="#contacto">Contacto</a>
+    <div class="links">
+      <a href="#home">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#customers">Customers</a>
+      <a href="#assistant">Assistant</a>
+    </div>
+    <div class="discord">
+      <a href="https://discord.gg/yourinvite" target="_blank">Join Discord</a>
+    </div>
   </nav>
-</header>
 
-<div class="container">
-
-  <section id="inicio">
-    <h2>Inicio</h2>
-    <p>¡Hola! Este es mi sitio personal creado con GitHub Pages. Aquí comparto lo que hago y cómo puedes contactarme.</p>
+  <section class="section" id="home">
+    <h2>Welcome to BlueCode</h2>
+    <p>Your ultimate Minecraft item store. Buy ranks, kits, and much more to power up your experience. Log in to get started!</p>
   </section>
 
-  <section id="sobre">
-    <h2>Sobre mí</h2>
-    <p>Soy desarrollador web apasionado por la tecnología, el aprendizaje continuo y los proyectos creativos. Me gusta construir sitios simples pero efectivos.</p>
+  <section class="section auth">
+    <h2>Register / Login</h2>
+    <input type="text" placeholder="Username"> <input type="password" placeholder="Password">
+    <button>Login</button> <button>Register</button>
+    <p>Login with Discord to see your profile!</p>
   </section>
 
-  <section id="proyectos">
-    <h2>Proyectos</h2>
-    <ul>
-      <li><strong>MiPortafolio</strong> – Sitio donde muestro mis proyectos web.</li>
-      <li><strong>AppTareas</strong> – Aplicación para organizar tareas personales.</li>
-      <li><strong>Clon YouTube</strong> – Proyecto de práctica con HTML/CSS.</li>
-    </ul>
+  <section class="section" id="shop">
+    <h2>Products</h2>
+    <div class="products">
+      <div class="product"><h3>VIP Rank</h3><p>$5.99</p></div>
+      <div class="product"><h3>Elite Kit</h3><p>$9.99</p></div>
+      <div class="product"><h3>Mystery Crate</h3><p>$3.49</p></div>
+      <div class="product"><h3>Cosmetic Pack</h3><p>$7.00</p></div>
+      <div class="product"><h3>Boost XP</h3><p>$4.50</p></div>
+    </div>
   </section>
 
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p>Puedes escribirme a: <a href="mailto:contacto@juniorhosting.xyz">contacto@juniorhosting.xyz</a></p>
+  <section class="section" id="reviews">
+    <h2>User Reviews</h2>
+    <div class="reviews">
+      <div class="review">"Awesome server store!" - PlayerOne</div>
+      <div class="review">"Worked like magic." - AlexGamer</div>
+    </div>
   </section>
 
-</div>
+  <section class="section" id="customers">
+    <h2>Customer Purchases</h2>
+    <div class="customers">
+      <div class="customer"><strong>Steve123</strong> bought VIP Rank</div>
+      <div class="customer"><strong>ProMiner</strong> bought Mystery Crate</div>
+    </div>
+  </section>
 
-<footer>
-  &copy; 2025 Junior Hosting. Todos los derechos reservados.
-</footer>
+  <section class="section assistant" id="assistant">
+    <h2>Need Help?</h2>
+    <p>Use our assistant for any support or error handling.</p>
+  </section>
 
+  <button class="chat-toggle" onclick="toggleChat()">💬</button>
+  <div class="chat-box" id="chatBox">
+    <p><strong>Assistant:</strong> How can I assist you today?</p>
+    <input type="text" placeholder="Type your message..." style="width: 100%; padding: 0.5rem;">
+  </div>
+
+  <footer>
+    &copy; 2025 BlueCode. All rights reserved.
+  </footer>
 </body>
 </html>
