@@ -1,11 +1,233 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Mi Sitio</title>
-  </head>
-  <body>
-    <h1>¡Hola desde GitHub Pages!</h1>
-    <p>Tu sitio está funcionando correctamente.</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlueCode - Minecraft Store</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #000000;
+      color: #e0f7ff;
+      display: flex;
+    }
+    .sidebar {
+      width: 250px;
+      background-color: #003c6e;
+      height: 100vh;
+      padding: 1rem;
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+    }
+    .sidebar h2 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: #81d4fa;
+    }
+    .sidebar a {
+      color: #81d4fa;
+      text-decoration: none;
+      margin: 0.8rem 0;
+      display: flex;
+      align-items: center;
+    }
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+    .sidebar img.icon {
+      width: 24px;
+      margin-right: 10px;
+    }
+    .main {
+      margin-left: 260px;
+      padding: 2rem;
+      width: calc(100% - 260px);
+    }
+    .header {
+      background: linear-gradient(to right, #0288d1, #01579b);
+      border-radius: 10px;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+    .header .logo {
+      display: flex;
+      align-items: center;
+    }
+    .header .logo img {
+      width: 80px;
+      animation: spin 6s linear infinite;
+    }
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .banner {
+      width: 100%;
+      background: #004d80;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      margin-top: 1rem;
+    }
+    .section {
+      background: #002b4c;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-top: 2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    }
+    .section h2 {
+      color: #81d4fa;
+    }
+    .product, .embed {
+      background: #004d80;
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 6px;
+    }
+    .embed h3, .embed p {
+      margin: 0.5rem 0;
+    }
+    .embed p span {
+      font-weight: bold;
+      color: #b3e5fc;
+    }
+    .auth {
+      background: #004d80;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+    .auth input {
+      padding: 0.5rem;
+      margin-right: 1rem;
+      margin-top: 0.5rem;
+    }
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      color: #81d4fa;
+    }
+    .discord-icon {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #7289da;
+      border-radius: 50%;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .discord-icon img {
+      width: 40px;
+    }
+    .chat-box {
+      display: none;
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      background: #002b4c;
+      padding: 1rem;
+      border-radius: 8px;
+      width: 300px;
+      box-shadow: 0 0 10px #000;
+    }
+    .chat-toggle {
+      position: fixed;
+      bottom: 130px;
+      right: 20px;
+      background: #0288d1;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    function toggleChat() {
+      const chat = document.getElementById('chatBox');
+      chat.style.display = chat.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Navigation</h2>
+    <a href="#home">Home</a>
+    <a href="#shop">Shop</a>
+    <a href="#customers">Customers</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#assistant">AI Assistant</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="main">
+    <div class="header">
+      <div class="logo">
+        <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/external-cube-graphic-design-flatart-icons-outline-flatarticons.png" alt="logo" />
+        <h1 style="margin-left: 1rem; color: white;">BlueCode</h1>
+      </div>
+    </div>
+    <div class="banner">Welcome to the official BlueCode Minecraft store</div>
+    <div class="auth">
+      <h3>Register / Login</h3>
+      <input type="text" placeholder="Username" />
+      <input type="password" placeholder="Password" />
+      <button>Login</button>
+      <button>Register</button>
+    </div>
+    <div class="section" id="home">
+      <h2>Welcome to BlueCode</h2>
+      <p>BlueCode is your ultimate Minecraft store for everything from ranks to exclusive kits. Experience a secure, fun, and customizable shopping platform. Connect your Discord and display your avatar!</p>
+    </div>
+    <div class="section" id="shop">
+      <h2>Shop Products</h2>
+      <div class="embed"><h3>VIP Rank</h3><p>Includes tag and chat color. <span>$5.99</span></p></div>
+      <div class="embed"><h3>Elite Kit</h3><p>Includes armor and tools. <span>$9.99</span></p></div>
+      <div class="embed"><h3>Mystery Crate</h3><p>Randomized rewards. <span>$3.49</span></p></div>
+      <div class="embed"><h3>Cosmetic Pack</h3><p>Capes and pets. <span>$7.00</span></p></div>
+      <div class="embed"><h3>Boost XP</h3><p>Double XP for 24h. <span>$4.50</span></p></div>
+    </div>
+    <div class="section" id="customers">
+      <h2>Customer Table</h2>
+      <table style="width: 100%; color: white;">
+        <tr><th>Username</th><th>Item</th><th>Status</th></tr>
+        <tr><td>Steve123</td><td>VIP Rank</td><td>Delivered</td></tr>
+        <tr><td>MinerPro</td><td>Mystery Crate</td><td>Pending</td></tr>
+      </table>
+    </div>
+    <div class="section" id="reviews">
+      <h2>User Reviews</h2>
+      <p>"Awesome server store!" - PlayerOne</p>
+      <p>"Everything I bought worked great." - GamerX</p>
+    </div>
+    <div class="section" id="assistant">
+      <h2>Error Assistant</h2>
+      <p>Need help? Click the AI icon below to start a chat with our assistant.</p>
+    </div>
+    <div class="section" id="contact">
+      <h2>Contact & Support</h2>
+      <p>Email: support@bluecode.com</p>
+    </div>
+    <footer>
+      &copy; 2025 BlueCode. All rights reserved.
+    </footer>
+  </div>
+  <a class="discord-icon" href="https://discord.gg/yourinvite" target="_blank">
+    <img src="https://img.icons8.com/ios-filled/50/ffffff/discord-logo.png" alt="Discord" />
+  </a>
+  <button class="chat-toggle" onclick="toggleChat()">🤖</button>
+  <div class="chat-box" id="chatBox">
+    <p><strong>AI Assistant:</strong> How can I help you today?</p>
+    <input type="text" placeholder="Type your issue..." style="width: 100%; padding: 0.5rem;" />
+  </div>
+</body>
 </html>
