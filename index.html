@@ -1,2 +1,103 @@
-<h1>Bienvenido a Junior Hosting</h1>
-<p>Este es mi sitio web personal hecho con GitHub Pages.</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Junior Hosting</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f2f2f2;
+      color: #333;
+    }
+    header {
+      background-color: #222;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    h2 {
+      color: #007acc;
+      margin-top: 0;
+    }
+    footer {
+      background-color: #eee;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    @media (max-width: 600px) {
+      nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Bienvenido a Junior Hosting</h1>
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#sobre">Sobre mí</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <section id="inicio">
+    <h2>Inicio</h2>
+    <p>¡Hola! Este es mi sitio personal creado con GitHub Pages. Aquí comparto lo que hago y cómo puedes contactarme.</p>
+  </section>
+
+  <section id="sobre">
+    <h2>Sobre mí</h2>
+    <p>Soy desarrollador web apasionado por la tecnología, el aprendizaje continuo y los proyectos creativos. Me gusta construir sitios simples pero efectivos.</p>
+  </section>
+
+  <section id="proyectos">
+    <h2>Proyectos</h2>
+    <ul>
+      <li><strong>MiPortafolio</strong> – Sitio donde muestro mis proyectos web.</li>
+      <li><strong>AppTareas</strong> – Aplicación para organizar tareas personales.</li>
+      <li><strong>Clon YouTube</strong> – Proyecto de práctica con HTML/CSS.</li>
+    </ul>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>Puedes escribirme a: <a href="mailto:contacto@juniorhosting.xyz">contacto@juniorhosting.xyz</a></p>
+  </section>
+
+</div>
+
+<footer>
+  &copy; 2025 Junior Hosting. Todos los derechos reservados.
+</footer>
+
+</body>
+</html>
