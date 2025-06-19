@@ -1,202 +1,175 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BlueCode Store</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blue ComboLord</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #0e1621;
-      color: #e0f7ff;
-    }
-
-    header {
-      background: url('https://i.imgur.com/Ph4lIoR.png') center/cover no-repeat;
-      padding: 3rem 2rem 1rem;
+      background: linear-gradient(to bottom, #aee1ff, #d0f0ff);
+      background-attachment: fixed;
+      color: #000;
       text-align: center;
     }
 
-    header img.logo {
-      width: 100px;
-      animation: float 3s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    nav {
+    .overlay {
+      min-height: 100vh;
+      padding: 40px 20px;
       display: flex;
-      justify-content: space-between;
-      background: #1c2938;
-      padding: 1rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      flex-direction: column;
+      align-items: center;
     }
 
-    nav .links a {
-      color: #81d4fa;
-      text-decoration: none;
-      margin: 0 1rem;
-    }
-
-    nav .links a:hover {
-      text-decoration: underline;
-    }
-
-    .section {
-      padding: 2rem;
-      background: #132330;
-      margin: 1rem;
-      border-radius: 10px;
-    }
-
-    .section h2 {
-      color: #00bcd4;
-    }
-
-    .products, .reviews, .customers {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-    }
-
-    .product, .review, .customer {
-      background: #1f3a56;
-      padding: 1rem;
-      border-radius: 8px;
-    }
-
-    .auth, .assistant, .discord {
-      margin-top: 2rem;
-    }
-
-    .discord a {
-      background: #7289da;
-      padding: 0.5rem 1rem;
-      color: white;
-      border-radius: 5px;
-      text-decoration: none;
-    }
-
-    .chat-toggle, .chat-box {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-    }
-
-    .chat-toggle {
-      background: #0288d1;
-      color: white;
-      border: none;
+    .avatar {
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 24px;
-      cursor: pointer;
-      z-index: 2000;
+      border: 4px solid #3498db;
+      margin-bottom: 20px;
     }
 
-    .chat-box {
-      display: none;
-      background: #0d1c2b;
-      padding: 1rem;
-      border-radius: 10px;
+    .random-img {
       width: 300px;
-      box-shadow: 0 0 10px #000;
+      border-radius: 16px;
+      margin: 20px 0;
     }
 
-    footer {
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .link {
+      display: block;
+      width: 90%;
+      max-width: 400px;
+      margin: 10px 0;
+      padding: 15px;
       text-align: center;
-      padding: 1rem;
-      color: #81d4fa;
-      background: #0a111a;
-      margin-top: 2rem;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: bold;
+      color: white;
+      transition: 0.3s;
+    }
+
+    .link:hover {
+      transform: scale(1.03);
+      opacity: 0.9;
+    }
+
+    .instagram { background: #833AB4; }
+    .youtube { background: #FF0000; }
+    .twitch { background: #9146FF; }
+    .discord { background: #5865F2; }
+
+    #thanks {
+      margin-top: 30px;
+      font-size: 20px;
+      color: green;
+      font-weight: bold;
+      display: none;
+    }
+
+    #datetime {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #2c3e50;
     }
   </style>
-  <script>
-    function toggleChat() {
-      const chat = document.getElementById('chatBox');
-      chat.style.display = chat.style.display === 'block' ? 'none' : 'block';
-    }
-  </script>
 </head>
 <body>
-  <header>
-    <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/external-cube-graphic-design-flatart-icons-outline-flatarticons.png" class="logo" alt="BlueCode Logo">
-    <h1 style="color: white;">BlueCode</h1>
-  </header>
+  <div class="overlay">
+    <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/y8S03BK9/bd8101beed5b75028a0a175a743c0d8e.webp' border='0' alt='bd8101beed5b75028a0a175a743c0d8e'/></a>
 
-  <nav>
-    <div class="links">
-      <a href="#home">Home</a>
-      <a href="#shop">Shop</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#customers">Customers</a>
-      <a href="#assistant">Assistant</a>
-    </div>
-    <div class="discord">
-      <a href="https://discord.gg/yourinvite" target="_blank">Join Discord</a>
-    </div>
-  </nav>
+    <h1>Blue ComboLord</h1>
+    <p>¡Bienvenido a mi universo de enlaces!</p>
 
-  <section class="section" id="home">
-    <h2>Welcome to BlueCode</h2>
-    <p>Your ultimate Minecraft item store. Buy ranks, kits, and much more to power up your experience. Log in to get started!</p>
-  </section>
+    <a class="link instagram" href="https://www.instagram.com/black._.daniel_gng/" target="_blank" onclick="agradecer('Instagram')">Instagram</a>
+    <a class="link youtube" href="https://www.youtube.com/@magdanielmt5294" target="_blank" onclick="agradecer('YouTube')">YouTube</a>
+    <a class="link twitch" href="https://www.twitch.tv/magdaniel_gtx" target="_blank" onclick="agradecer('Twitch')">Twitch</a>
+    <a class="link discord" href="https://discord.gg/kztH9hbud4" target="_blank" onclick="agradecer('Discord')">Únete a MarlinMC.com</a>
 
-  <section class="section auth">
-    <h2>Register / Login</h2>
-    <input type="text" placeholder="Username"> <input type="password" placeholder="Password">
-    <button>Login</button> <button>Register</button>
-    <p>Login with Discord to see your profile!</p>
-  </section>
+    <div id="thanks">¡Gracias por seguirme!</div>
+    <div id="datetime"></div>
+    <p>Página creada el 19/06/2025
+</p>
+<p>si quieres jugar minecraft entra ah
+IP: marlinmc.com
+PUERTO: 25565
 
-  <section class="section" id="shop">
-    <h2>Products</h2>
-    <div class="products">
-      <div class="product"><h3>VIP Rank</h3><p>$5.99</p></div>
-      <div class="product"><h3>Elite Kit</h3><p>$9.99</p></div>
-      <div class="product"><h3>Mystery Crate</h3><p>$3.49</p></div>
-      <div class="product"><h3>Cosmetic Pack</h3><p>$7.00</p></div>
-      <div class="product"><h3>Boost XP</h3><p>$4.50</p></div>
-    </div>
-  </section>
-
-  <section class="section" id="reviews">
-    <h2>User Reviews</h2>
-    <div class="reviews">
-      <div class="review">"Awesome server store!" - PlayerOne</div>
-      <div class="review">"Worked like magic." - AlexGamer</div>
-    </div>
-  </section>
-
-  <section class="section" id="customers">
-    <h2>Customer Purchases</h2>
-    <div class="customers">
-      <div class="customer"><strong>Steve123</strong> bought VIP Rank</div>
-      <div class="customer"><strong>ProMiner</strong> bought Mystery Crate</div>
-    </div>
-  </section>
-
-  <section class="section assistant" id="assistant">
-    <h2>Need Help?</h2>
-    <p>Use our assistant for any support or error handling.</p>
-  </section>
-
-  <button class="chat-toggle" onclick="toggleChat()">💬</button>
-  <div class="chat-box" id="chatBox">
-    <p><strong>Assistant:</strong> How can I assist you today?</p>
-    <input type="text" placeholder="Type your message..." style="width: 100%; padding: 0.5rem;">
+</p>
   </div>
 
-  <footer>
-    &copy; 2025 BlueCode. All rights reserved.
-  </footer>
+  <script>
+    const webhookURL = "https://discord.com/api/webhooks/1385111161363628063/5hc6PIhoZVYq2SplpZjFI_NMkuAsVXn5zBDdDPV6xDNp7Z4TNIPZZw5b5kYjWlSynERf";
+
+    async function enviarLogEmbed(accion) {
+      try {
+        const res = await fetch('https://api.ipify.org?format=json');
+        const { ip } = await res.json();
+        const navegador = navigator.userAgent;
+
+        const embed = {
+          embeds: [{
+            title: "📥 Nuevo acceso a tu página",
+            color: 0x3498db,
+            fields: [
+              { name: "Acción", value: accion, inline: true },
+              { name: "IP del visitante", value: ip, inline: true },
+              { name: "Navegador", value: navegador.substring(0, 120), inline: false },
+              { name: "Fecha", value: new Date().toLocaleString(), inline: false }
+            ],
+            footer: {
+              text: "Logger BlueComboLord",
+              icon_url: "https://cdn-icons-png.flaticon.com/512/2111/2111370.png"
+            }
+          }]
+        };
+
+        await fetch(webhookURL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(embed)
+        });
+      } catch (err) {
+        console.error("Error al enviar a Discord:", err);
+      }
+    }
+
+    function agradecer(red) {
+      const msg = document.getElementById("thanks");
+      msg.style.display = "block";
+      msg.textContent = `¡Gracias por seguirme en ${red}!`;
+
+      setTimeout(() => {
+        msg.style.display = "none";
+      }, 4000);
+
+      enviarLogEmbed(`Clic en ${red}`);
+    }
+
+    window.onload = () => {
+      enviarLogEmbed("Visita a la página");
+      actualizarFechaHora();
+      setInterval(actualizarFechaHora, 1000);
+    };
+
+    function actualizarFechaHora() {
+      const now = new Date();
+      const datetime = now.toLocaleString("es-ES", {
+        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+        hour: '2-digit', minute: '2-digit', second: '2-digit'
+      });
+      document.getElementById("datetime").textContent = `Hora actual: ${datetime}`;
+    }
+  </script>
 </body>
 </html>
